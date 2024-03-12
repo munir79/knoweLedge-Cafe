@@ -1,5 +1,6 @@
 // import { useEffect } from "react";
 // import { useState } from "react";
+import PropTypes from 'prop-types';
 import SingleBlog from "../SingleBlog/SingleBlog";
 import cover1 from '../assets/1.jpg';
 import cover2 from '../assets/2.png';
@@ -74,5 +75,7 @@ const Blogs = ({handleBookMarks}) => {
         </div>
     );
 };
-
+Blogs.propTypes={
+    handleBookMarks:PropTypes.func
+}
 export default Blogs;

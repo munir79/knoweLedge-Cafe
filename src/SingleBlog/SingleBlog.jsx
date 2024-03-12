@@ -21,7 +21,7 @@ const SingleBlog = ({cov,handleBookMarks}) => {
             </div>
             <div>
               <span> {reading_time} min read </span>
-              <button onClick={handleBookMarks} className='ml-2 text-2xl text-rose-600'><IoBookmarksSharp></IoBookmarksSharp> </button>
+              <button onClick={()=>handleBookMarks(cov)} className='ml-2 text-2xl text-rose-600'><IoBookmarksSharp></IoBookmarksSharp> </button>
             </div>
          </div>
          <h2 className='text-4xl'>{title} </h2>
@@ -30,6 +30,7 @@ const SingleBlog = ({cov,handleBookMarks}) => {
     );
 };
 SingleBlog.propTypes={
-    cov:PropTypes.object.isRequired
+    cov:PropTypes.object.isRequired,
+    handleBookMarks:PropTypes.func
 }
 export default SingleBlog;

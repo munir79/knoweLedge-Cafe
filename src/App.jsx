@@ -7,10 +7,12 @@ import Header from './Componenet/Header/Header'
 
 function App() {
 
-  const [boomarks,setBookMarks]=useState([]);
-  
+  const [bookmarks,setBookMarks]=useState([]);
+
   const handleBookMarks=book=>{
-    console.log("bookMArks Adding Soon");
+    // console.log("bookMArks Adding Soon");
+    const newBookMArks=[...bookmarks,book];
+    setBookMarks(newBookMArks);
 
   }
 
@@ -20,7 +22,7 @@ function App() {
       <Header></Header>
     <div className='md:flex max-w-7xl mx-auto '>
     <Blogs handleBookMarks={handleBookMarks}></Blogs>
-    <Bookmark></Bookmark>
+    <Bookmark bookmarks={bookmarks} ></Bookmark>
     </div>
      
       
