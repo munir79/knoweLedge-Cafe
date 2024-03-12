@@ -11,7 +11,7 @@ import author3 from '../assets/girl1.jpg';
 import author4 from '../assets/girl2.jpg';
 
 
-const Blogs = () => {
+const Blogs = ({handleBookMarks}) => {
     // const [blogs,setBlogs]=useState([]);
     // useEffect( ()=>{
     //     fetch('blog.json')
@@ -27,7 +27,8 @@ const Blogs = () => {
         "author_img": author1,
         "posted_date": "2024-03-11",
         "reading_time": "10 min",
-        "hashtags": "#travel #landscape #photography"  
+        "hashtags": "#travel #landscape #photography" 
+       
     },
         {
         "id":2,
@@ -68,7 +69,7 @@ const Blogs = () => {
 
          
             {
-                img.map(cov=><SingleBlog key={cov.id} cov={cov} ></SingleBlog>)
+                img.map(cov=><SingleBlog handleBookMarks={handleBookMarks} key={cov.id} cov={cov} ></SingleBlog>)
             }
         </div>
     );
