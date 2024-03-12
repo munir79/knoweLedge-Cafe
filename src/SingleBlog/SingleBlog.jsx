@@ -2,8 +2,8 @@
 import PropTypes from 'prop-types';
 // import { FaRegBookmark,IoBookmarksSharp } from "react-icons/fa";
 import { IoBookmarksSharp } from "react-icons/io5";
-const SingleBlog = ({cov,handleBookMarks}) => {
- console.log(cov);
+const SingleBlog = ({cov,handleBookMarks,handleMArkRead}) => {
+//  console.log(cov);
    const {title,cover,author_img,author,reading_time,posted_date,hashtags}=cov;
     return (
         <div className='mb-20'>
@@ -26,11 +26,15 @@ const SingleBlog = ({cov,handleBookMarks}) => {
          </div>
          <h2 className='text-4xl'>{title} </h2>
          <a href="">{hashtags} </a>
+         <br />
+         <button onClick={()=>handleMArkRead(reading_time)} className='text-blue-700  underline'>Mark As Read</button>
         </div>
     );
 };
 SingleBlog.propTypes={
     cov:PropTypes.object.isRequired,
-    handleBookMarks:PropTypes.func
+    handleBookMarks:PropTypes.func,
+    handleMArkRead:PropTypes.func
+   
 }
 export default SingleBlog;

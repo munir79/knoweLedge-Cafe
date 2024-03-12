@@ -12,7 +12,7 @@ import author3 from '../assets/girl1.jpg';
 import author4 from '../assets/girl2.jpg';
 
 
-const Blogs = ({handleBookMarks}) => {
+const Blogs = ({handleBookMarks,handleMArkRead}) => {
     // const [blogs,setBlogs]=useState([]);
     // useEffect( ()=>{
     //     fetch('blog.json')
@@ -27,7 +27,7 @@ const Blogs = ({handleBookMarks}) => {
         "author": "John Doe",
         "author_img": author1,
         "posted_date": "2024-03-11",
-        "reading_time": "10 min",
+        "reading_time": 10 ,
         "hashtags": "#travel #landscape #photography" 
        
     },
@@ -38,7 +38,7 @@ const Blogs = ({handleBookMarks}) => {
     "author": "Jane Smith",
     "author_img": author2,
     "posted_date": "2024-03-10",
-    "reading_time": "15 min",
+    "reading_time": 15,
     "hashtags": "#food #recipes #cooking"  
     },
         {
@@ -48,7 +48,7 @@ const Blogs = ({handleBookMarks}) => {
        "author": "Sarah Miller",
        "author_img": author3,
        "posted_date": "2024-03-08",
-       "reading_time": "12 min",
+       "reading_time": 12,
        "hashtags": "#space #exploration #science"
     },
         {
@@ -59,7 +59,7 @@ const Blogs = ({handleBookMarks}) => {
        "author": "David Lee",
        "author_img": author4,
        "posted_date": "2024-03-09",
-       "reading_time": "8 min",
+       "reading_time": 8,
        "hashtags": "#wildlife #photography #nature"  
     },
 ];
@@ -70,12 +70,13 @@ const Blogs = ({handleBookMarks}) => {
 
          
             {
-                img.map(cov=><SingleBlog handleBookMarks={handleBookMarks} key={cov.id} cov={cov} ></SingleBlog>)
+                img.map(cov=><SingleBlog handleMArkRead={handleMArkRead} handleBookMarks={handleBookMarks} key={cov.id} cov={cov} ></SingleBlog>)
             }
         </div>
     );
 };
 Blogs.propTypes={
-    handleBookMarks:PropTypes.func
+    handleBookMarks:PropTypes.func,
+    handleMArkRead:PropTypes.func
 }
 export default Blogs;
