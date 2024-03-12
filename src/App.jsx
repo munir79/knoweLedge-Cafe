@@ -1,5 +1,8 @@
 
 import './App.css'
+import Blogs from './Blogs/Blogs'
+import Bookmark from './Bookmarks/Bookmark'
+import Header from './Componenet/Header/Header'
 
 function App() {
 
@@ -7,7 +10,12 @@ function App() {
   return (
     <>
       
-      <h1 className='text 6xl bg-red-500'>Knowledge Cafe</h1>
+      <Header></Header>
+    <div className='md:flex'>
+    <Blogs></Blogs>
+    <Bookmark></Bookmark>
+    </div>
+     
       
      
     </>
