@@ -17,11 +17,13 @@ function App() {
 
   }
 
-  const handleMArkRead=time=>{
+  const handleMArkRead=(time,id)=>{
     console.log('time added');
     const newTime=markTime+time;
     console.log(newTime);
     setMarkTime(newTime);
+    const NewBookmarks=bookmarks.filter(book=>book.id!=id);
+    setBookMarks(NewBookmarks);
   }
 
   return (

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { IoBookmarksSharp } from "react-icons/io5";
 const SingleBlog = ({cov,handleBookMarks,handleMArkRead}) => {
 //  console.log(cov);
-   const {title,cover,author_img,author,reading_time,posted_date,hashtags}=cov;
+   const {id,title,cover,author_img,author,reading_time,posted_date,hashtags}=cov;
     return (
         <div className='mb-20'>
        
@@ -27,7 +27,7 @@ const SingleBlog = ({cov,handleBookMarks,handleMArkRead}) => {
          <h2 className='text-4xl'>{title} </h2>
          <a href="">{hashtags} </a>
          <br />
-         <button onClick={()=>handleMArkRead(reading_time)} className='text-blue-700  underline'>Mark As Read</button>
+         <button onClick={()=>handleMArkRead(reading_time,id)} className='text-blue-700  underline'>Mark As Read</button>
         </div>
     );
 };
